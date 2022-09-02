@@ -1,0 +1,65 @@
+.modal {
+display: none;
+position: fixed;
+z-index: 1;
+left: 0;
+top: 0;
+width: 100%;
+height: 100%;
+overflow: auto;
+background-color: rgba(0,0,0,0.6);
+z-index: 1000;
+}
+
+.modal .modal_content {
+background-color: #fefefe;
+margin: 15% auto;
+padding: 20px;
+border: 1px solid #888;
+width: 80%;
+z-index: 99999;
+}
+
+.modal_mini {
+display: none;
+position: fixed;
+left: 85%;
+top: 60%;
+width: 25%;
+height: 30%;
+z-index: 1000;
+animation-duration: 0.5s;
+animation-name: slide;
+animation-fill-mode: forwards;
+}
+
+@keyframes slide {
+0% { opacity: 0; }
+100% { opacity: 1; }
+}
+
+.modal_mini .modal_content {
+background-color: #fefefe;
+padding: 5px;
+border: 1px solid #888;
+width: 50%;
+z-index: 99999;
+}
+
+.modal .modal_content .close_modal_window {
+color: #aaa;
+float: right;
+font-size: 28px;
+font-weight: bold;
+cursor: pointer;
+}
+
+.slick-track {
+    display: flex;
+    align-items: flex-start;
+}
+
+.slick-prev:before,
+.slick-next:before {
+    color: black;
+}

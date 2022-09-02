@@ -1,0 +1,146 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+                content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Guest Book</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="slick/slick.css"/>
+    <link rel="stylesheet" href="slick/slick-theme.css"/>
+    <link rel="stylesheet" href="mymodal.css">
+    <link href="air-datepicker/css/datepicker.min.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div class="container pt-4">
+    <h1> Guest book</h1>
+    <form action="#" id="search">
+        <div class="input-group">
+            <input type="text" class="form-control" id="search-field" placeholder="Author...">
+            <input type="text" class="form-control datepicker-here" id="search-date-from" placeholder="01.02.2017">
+
+            <input type="text" class="form-control datepicker-here" id="search-date-to" placeholder="01.02.2019">
+
+            <div class="input-group-append">
+                <button class="btn btn-outline-secondary" id = "btn-search">search</button>
+            </div>
+        </div>
+        <div class="form-group">
+        </div>
+    </form>
+    <section id="comments-list">
+        <!-- <article id = "sample" class="card">
+            <div class="card-body">
+                <h3  class="cart-title">UserName</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi consequatur error maiores quisquam vitae. Aliquid blanditiis, dolorum, eligendi magni nesciunt nulla provident quisquam rem, reprehenderit sapiente similique tempore veniam voluptatum.</p>
+            </div>
+            <div id = "my_modal-m" class="modal">
+                <div class="modal_content">
+                    <div class="card mt-2">
+                    <form action="#" id ="add-comments-modal">
+                        <div class="card-body">
+                            <h4 class="cart-title">Edit comment</h4>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea name="message" class="form-control"  cols="30" rows="2"></textarea>
+                        </div>
+                            <button class="btn btn-primary" id = "btn-Save-edit">Save</button>
+                            <button class="btn btn-danger" id = "btn-Cansel-edit">Cansel</button>
+                        </div>
+                    </form>
+                </div>
+                </div>
+            </div>
+            <div id = "my_comment-cs" class="modal">
+                <div class="modal_content">
+                  <div class="card mt-2">
+                    <form action="#" id ="add-comments-modal-comments">
+                        <div class="card-body">
+                            <h4 class="cart-title">Add your comment</h4>
+                        <div class="form-group">
+                                <label for="namet">Name</label>
+                                <input type="text" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Your comment</label>
+                            <textarea name="message" class="form-control"  cols="30" rows="2"></textarea>
+                        </div>
+                            <button class="btn btn-primary" id = "btn-Save-comments">Save</button>
+                            <button class="btn btn-danger" id = "btn-Cansel-comments">Cansel</button>
+                        </div>
+                    </form>
+                </div>
+                </div>
+            </div>
+            <div class="card-footer">
+                <small>Pub date: 17:00 01.01.2019</small>
+                <button class="btn btn-secondary btn-sm" id = "btn-comments-modal">comments this</button>
+                <button class="btn btn-primary btn-sm" id = "btn-modal-window">edit this</button>
+                <button class="btn btn-danger btn-sm" id = "delete-btn">delete this</button>
+            </div>
+            <div id = 'cs' class="sub-comments-list p-2">
+                <article class="card">
+                    <div class="card-body">
+                        <h6>UserName</h6>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi consequatur error maiores quisquam vitae. Aliquid blanditiis, dolorum, eligendi magni nesciunt nulla provident quisquam rem, reprehenderit sapiente similique tempore veniam voluptatum.</p>
+                    </div>
+                    <div class="card-footer">
+                        <small>Pub date: 17:00 01.01.2019</small>
+                    </div>
+                </article>
+            </div>
+        </article> -->
+        
+    </section>
+    <div class="card mt-2">
+        <form action="#" id="add-comments">
+            <div class="card-body">
+                <h4 class="cart-title">Add new comments</h4>
+            <div class="form-group">
+                <label for="name">name</label>
+                <input type="text" class="form-control" id="name">
+            </div>
+            <div class="form-group">
+                <label for="message">message</label>
+                <textarea name="message" class="form-control" id="message" cols="30" rows="2"></textarea>
+            </div>
+                <button class="btn btn-primary" id="btn1">add comment</button>
+            </div>
+        </form>
+    </div>
+    <div id = "comment-thanks" class="modal_mini">
+        <div class="modal_content">
+             <div class="card-body">
+              <h6>Thank you for your comment!</h6>
+              <button class="btn btn-primary" id ="btn-Ok-thanks">Ok</button>
+             </div>
+        </div>
+      </div> 
+      <div id = "comment-delete" class="modal_mini">
+        <div class="modal_content">
+             <div class="card-body">
+              <h6>comments delete</h6>
+              <button class="btn btn-primary" id ="btn-Ok-delete">Ok</button>
+             </div>
+        </div>
+      </div>
+      <div id = "comment-update" class="modal_mini">
+        <div class="modal_content">
+             <div class="card-body">
+              <h6>comments update</h6>
+              <button class="btn btn-primary" id ="btn-Ok-update">Ok</button>
+             </div>
+        </div>
+      </div>
+    </div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+<script src="air-datepicker/js/datepicker.min.js"></script>
+<script src="slick/slick.min.js"></script>
+<script src="scripts.js"></script>
+</body>
+</html>
